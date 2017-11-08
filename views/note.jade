@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    base(href='/')
+    title noteApp
+    link(href='/stylesheets/note.css', rel='stylesheet')
+    script(src='/core-js/client/shim.min.js')
+    script(src='/zone.js/dist/zone.js')
+    script(src='/jade/jade.js')
+    script(src='/systemjs/dist/system.src.js')
+    script(src='/javascripts/systemjs.config.js')
+    script.
+      System.import('notetsapp').catch(function(err){ console.error(err); });
+  body
+    .noteMain

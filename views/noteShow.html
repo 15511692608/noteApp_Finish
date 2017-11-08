@@ -1,0 +1,11 @@
+﻿<div class='info' *ngIf='note'>
+  <h2>详细数据</h2>
+  <p>{{note._id}}</p>
+  <p>{{note.time}}</p>
+  <p>{{note.name}}</p>
+  <p [innerHTML]="note.content"></p>
+  <p>{{note.sts}}</p>
+</div>
+<div class='info' *ngIf='!note'>
+  <h2>数据不存在</h2>
+</div>

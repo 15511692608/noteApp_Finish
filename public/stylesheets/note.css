@@ -1,0 +1,12 @@
+*{
+margin:0;
+padding:0;
+}
+body{
+font-family:arial,sans-serif;
+font-size:100%;
+margin:3em;
+background:#666;
+color:#fff;
+background-image: url('/images/bg.jpg')
+}

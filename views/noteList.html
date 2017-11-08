@@ -1,0 +1,15 @@
+﻿<ul>
+<li *ngFor="let note of notes; let i = index"><a href="javascript:void(0);">
+<h2 style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;height:26px;">{{note.name}}</h2>
+<p style="overflow:hidden;text-overflow:ellipsis;height:90px;">{{note.content}}</p>
+<div style="position: relative;bottom: 0px;left: 0px;font-size: 10px;text-align: right;">
+	<p>类型:{{note.sts}}</p>
+	<p>{{note.time}}</p>
+	<p>
+		<span (click)="doShow(note._id)">查看</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<span (click)="doEdit(note)">修改</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<span (click)="doDel(note)">删除</span>
+	</p>
+</div>
+</a></li>
+</ul>

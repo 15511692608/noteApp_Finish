@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	p #{data}
+	form(method='post', action='/mongodb/add')
+		| name1:
+		input(type='text', name='name1Date', value='name1')
+		| name2:
+		input(type='text', name='name2Date', value='name2')
+		input(type='submit', value='add')
+	ul
+		each val,index in dbdata
+			form(method='post', action='/mongodb/del')
+				li= index + ': ' + val.name1Date + '-' + val.name2Date + '-' + val._id
+				input(type='hidden', name='id', value=val._id)
+				input(type='submit', value='del')
+	form(method='post', action='/mongodb/update')
+		| updName1Date[condition]:
+		input(type='text', name='udpName1Date', value='name1')
+		| udpName2Date[setting]:
+		input(type='text', name='udpName2Date', value='updName2')
+		input(type='submit', value='update')
+	a(href='/mongodb') 
+		| Index
